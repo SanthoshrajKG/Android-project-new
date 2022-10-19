@@ -31,8 +31,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import androidx.core.view.drawToBitmap
 import androidx.exifinterface.media.ExifInterface
+import com.google.android.gms.vision.text.TextRecognizer
+import com.google.firebase.ktx.Firebase
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.task.vision.detector.ObjectDetector
 import java.io.File
@@ -41,7 +42,6 @@ import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.log
 import kotlin.math.max
 import kotlin.math.min
 
@@ -65,6 +65,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     // Added for UI
     private var tarWeightList = ArrayList<String>()
     private var expiryDateList = ArrayList<String>()
+    //val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
+
+    private var textRecognizer: TextRecognizer? = null
+
+    private var stringResult : String= ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -126,6 +131,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      * runObjectDetection(bitmap: Bitmap)
      *      TFLite Object Detection function
      */
+
+    private fun detectText(){
+    }
     private fun runOpticalCharRecognition(
         bitmap: Bitmap,
         detector: ObjectDetector,
@@ -194,6 +202,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         return str
     }
 
+    private fun textRecognizer(bitmap: Bitmap) {
+
+
+    }
     private fun runObjectDetection(bitmap: Bitmap) {
         //  Bitmap.createScaledBitmap(bitmap, 640, 640, true)
         Log.d(TAG, "Running object detection.")
@@ -207,7 +219,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val image = TensorImage.fromBitmap(scaledBitmap)
 
-        val imageHeigth = image.height
+        val imageHeight = image.height
         val imageWidth = image.width
 
 
@@ -247,7 +259,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 val charDetector = ObjectDetector.createFromFileAndOptions(
                     this,
-                    "digits recognition_.tflite",
+                    "digits recognition.tflite",
                     ocrOptions
                 )
                 // left top right bottom

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "518897948037",
+    "project_id": "textrecognition-c7ee8",
+    "storage_bucket": "textrecognition-c7ee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518897948037:android:a76c97f5bcf70b276020ec",
+        "android_client_info": {
+          "package_name": "org.tensorflow.codelabs.objectdetection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518897948037-sj8704fv6a0cprem2tut9ecmqhljni1j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.tensorflow.codelabs.objectdetection",
+            "certificate_hash": "828363b667ff22ba10a337d924a2c397451acd97"
+          }
+        },
+        {
+          "client_id": "518897948037-p2vi9gck5ha40ci5cr3npq3rfchnb3k1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwZkJ8Pe1LBNJqwTkcjx2HjAtSqpAo854"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518897948037-p2vi9gck5ha40ci5cr3npq3rfchnb3k1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

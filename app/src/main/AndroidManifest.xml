@@ -19,6 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ObjectDetection">
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="ocr" />
         <activity android:name="org.tensorflow.codelabs.objectdetection.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,4 +40,5 @@
                 android:resource="@xml/file_paths" />
         </provider>
     </application>
+
 </manifest>
