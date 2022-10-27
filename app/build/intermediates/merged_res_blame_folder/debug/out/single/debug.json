@@ -1,82 +1,90 @@
 [
     {
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
         "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/drawable_cyl1.jpg.flat",
         "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/drawable/cyl1.jpg"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/drawable_cyl2.jpg.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/drawable/cyl2.jpg"
-    },
-    {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/layout_activity_main.xml.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/layout/activity_main.xml"
-    },
-    {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-anydpi-v26/ic_launcher.xml"
-    },
-    {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/drawable_cyl3.jpg.flat",
         "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/drawable/cyl3.jpg"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-pngs-13:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\layout\\activity_main.xml"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/xml_file_paths.xml.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/xml/file_paths.xml"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/drawable_ic_camera.xml.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/drawable/ic_camera.xml"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\drawable_cyl3.jpg.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\drawable\\cyl3.jpg"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-pngs-13:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\drawable_ic_camera.xml.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\drawable\\ic_camera.xml"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\drawable_cyl2.jpg.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\drawable\\cyl2.jpg"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/drawable_ic_launcher_background.xml.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\drawable_cyl1.jpg.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\drawable\\cyl1.jpg"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "org.tensorflow.codelabs.objectdetection.app-merged_res-18:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "org.tensorflow.codelabs.objectdetection.app-main-20:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\xml\\file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-merged_res-18:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Santhoshraj KG\\.gradle\\daemon\\7.3.3\\org.tensorflow.codelabs.objectdetection.app-main-20:\\mipmap-xxhdpi\\ic_launcher_round.png"
     }
 ]

@@ -32,8 +32,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
-import com.google.android.gms.vision.text.TextRecognizer
-import com.google.firebase.ktx.Firebase
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.task.vision.detector.ObjectDetector
 import java.io.File
@@ -65,11 +63,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     // Added for UI
     private var tarWeightList = ArrayList<String>()
     private var expiryDateList = ArrayList<String>()
-    //val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
-
-    private var textRecognizer: TextRecognizer? = null
-
-    private var stringResult : String= ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,7 +87,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             resultCode == Activity.RESULT_OK
         ) {
             try{
-                Log.d(TAG, "Activityresult: viewing and detecting captured image")
+                Log.d(TAG, "ActivityResult: viewing and detecting captured image")
                 setViewAndDetect(getCapturedImage())
             }catch (e : Exception){
             }
@@ -131,51 +124,65 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      * runObjectDetection(bitmap: Bitmap)
      *      TFLite Object Detection function
      */
-
-    private fun detectText(){
-    }
     private fun runOpticalCharRecognition(
         bitmap: Bitmap,
         detector: ObjectDetector,
         condition: String
     ) {
         Log.d(TAG, "Running optical character recognition.")
-        val croppedImage = TensorImage.fromBitmap(Bitmap.createScaledBitmap(bitmap, 640, 640, true))
+        var scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.width, bitmap.height, true)
+        val matrix = Matrix()
+        matrix.postRotate(90F)
+        for (i in 0..3) {
+            scaledBitmap = Bitmap.createBitmap(
+                scaledBitmap,
+                0,
+                0,
+                scaledBitmap.width,
+                scaledBitmap.height,
+                matrix,
+                true
+            )
+            //Bitmap.createScaledBitmap(bitmap, 640, 640, true)
+            val croppedImage =
+                TensorImage.fromBitmap(scaledBitmap)
 
-        // Printing the final result
-        val result = detector.detect(croppedImage)
+            // Printing the final result
+            val result = detector.detect(croppedImage)
 
-        var resultValue = ""
+            var resultValue = ""
 
-        for (data in result) {
-            val res = data.categories.toString()
-            val str = res[12]
+            for (data in result) {
+                val res = data.categories.toString()
+                val str = res[12]
 
-            resultValue = if (condition == "T") {
-                if (resultValue.length == 2) {
-                    "${resultValue}.${str}"
+                resultValue = if (condition == "T") {
+                    if (resultValue.length == 2) {  // 1 2 3 -> A 2 3
+                        "${resultValue}.${str}"
+                    } else {
+                        "$resultValue$str"
+                    }
                 } else {
-                    "$resultValue$str"
-                }
-            } else {
-                if (resultValue.isEmpty()) {
-                    returnExpiryChar(str.toString())
-                } else {
-                    "$resultValue$str"
+                    if (resultValue.isEmpty()) {
+                        returnExpiryChar(str.toString())
+                    } else {
+                        "$resultValue$str"
+                    }
                 }
             }
-        }
-        Log.d(TAG, "Condition is...$condition")
-        Log.d(TAG, "result values is...$resultValue")
+            Log.d(TAG, "Condition is...$condition")
+            Log.d(TAG, "result values is...$resultValue")
 
-        when (condition) {
-            "T" -> {
-                resultValue = roundOffDecimal(resultValue.toDouble()).toString()  //resultValue.toDouble()
+            when (condition) {
+                "T" -> {
+                    resultValue =
+                        roundOffDecimal(resultValue.toDouble()).toString()  //resultValue.toDouble()
 
-                tarWeightList.add(resultValue)
-            }
-            "E" -> {
-                expiryDateList.add(resultValue)
+                       tarWeightList.add(resultValue)
+                }
+                "E" -> {
+                    expiryDateList.add(resultValue)
+                }
             }
         }
     }
@@ -202,26 +209,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         return str
     }
 
-    private fun textRecognizer(bitmap: Bitmap) {
-
-
-    }
     private fun runObjectDetection(bitmap: Bitmap) {
-        //  Bitmap.createScaledBitmap(bitmap, 640, 640, true)
         Log.d(TAG, "Running object detection.")
-        tarWeightList = ArrayList<String>()
-        expiryDateList = ArrayList<String>()
 
-        val bitmapHeigth =bitmap.height
-        val bitmapWidth=bitmap.width
-
-        val scaledBitmap =Bitmap.createScaledBitmap(bitmap, 640, 640, true)
-
-        val image = TensorImage.fromBitmap(scaledBitmap)
-
-        val imageHeight = image.height
-        val imageWidth = image.width
-
+        val image = TensorImage.fromBitmap(bitmap)
 
         val options = ObjectDetector.ObjectDetectorOptions.builder()
             .setMaxResults(DetParameters.maxResults)
@@ -246,7 +237,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
         // Draw the detection result on the bitmap and show it.
 
-        val imgWithResult = drawDetectionResult(scaledBitmap, resultToDisplay)
+        val imgWithResult = drawDetectionResult(bitmap, resultToDisplay)
         runOnUiThread {
             inputImageView.setImageBitmap(imgWithResult)
         }
@@ -263,23 +254,41 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     ocrOptions
                 )
                 // left top right bottom
-                val xRatio = bitmapWidth/640
-                val yRatio = bitmapHeigth/640
                 for ((i, obj) in results.withIndex()) {
                     val box = obj.boundingBox
                     val newBitmap = Bitmap.createBitmap(
                         bitmap,
-                        (box.left.toInt()* xRatio),
-                        (box.top.toInt()* yRatio),
-                        (box.width().toInt()* xRatio) ,
-                        (box.height().toInt() * yRatio)
+                        (box.left.toInt()-50),
+                        (box.top.toInt()-50),
+                        (box.width().toInt()+50) ,
+                        (box.height().toInt()+50)
                     )
                     Log.d(TAG,"Object detection..${i + 1}")
                     Log.d(TAG, obj.toString())
                     val res = obj.categories[0].toString()
+                    //textDetection(newBitmap)
+
                     runOpticalCharRecognition(newBitmap, charDetector, res[11].toString())
                 }
-
+                val hashMap : HashMap<String, Int> = HashMap()
+                for(i in tarWeightList){
+                   if(i !in hashMap.keys){
+                       hashMap[i] = 1
+                   }
+                    else{
+                       hashMap[i] = hashMap[i]!! +1
+                   }
+                }
+                val hashResult = hashMap.toList().sortedByDescending { (_, value) -> value}.toMap()
+                tarWeightList.clear()
+                var count=0
+                for(i in hashResult.keys){
+                    tarWeightList.add(i)
+                    count+=1
+                    if(count==3){
+                        break
+                    }
+                }
                 tvResult = findViewById(R.id.tv_result)
 
                 val tvDataResult = "Tare values:-\n $tarWeightList \n Expiry date:- \n $expiryDateList"
@@ -293,27 +302,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    /*   private fun debugPrint(results : List<Detection>) {
-           for ((i, obj) in results.withIndex()) {
-               val box = obj.boundingBox
-               Log.d(TAG, "Detected object: $i ")
-               Log.d(TAG, "  boundingBox: (${box.left}, ${box.top}) - (${box.right},${box.bottom})")
-               for ((j, category) in obj.categories.withIndex()) {
-                   Log.d(TAG, "    Label $j: ${category.label}")
-                   val confidence: Int = category.score.times(100).toInt()
-                   Log.d(TAG, "    Confidence: ${confidence}%")
-               }
-           }
-       }
-   */
     /**
      * setViewAndDetect(bitmap: Bitmap)
      *      Set image to view and call object detection
      */
     private fun setViewAndDetect(bitmap: Bitmap) {
 
-        tarWeightList = ArrayList<String>()
-        expiryDateList = ArrayList<String>()
+        tarWeightList = ArrayList()
+        expiryDateList = ArrayList()
 
         Log.d(TAG, "setting view and detecting.")
         // Display capture image
@@ -336,11 +332,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         if(!this::inputImageView.isInitialized){
             Log.d(TAG,"Input image view is null")
-            null
         }
         if(!this::currentPhotoPath.isInitialized){
             Log.d(TAG,"CURRENT Photo path is null")
-            null
         }
         Log.d(TAG, "getting captured image.")
         // Get the dimensions of the View
@@ -351,14 +345,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val bmOptions = BitmapFactory.Options().apply {
                 // Get the dimensions of the bitmap
                 inJustDecodeBounds = true
-                Log.d(TAG, "Current Photo path is"+ currentPhotoPath + " Width:"+ outWidth + " Height:"+ outHeight)
+                Log.d(TAG,
+                    "Current Photo path is$currentPhotoPath Width:$outWidth Height:$outHeight"
+                )
 
                 BitmapFactory.decodeFile(currentPhotoPath, this)
                 val photoW: Int = outWidth
                 val photoH: Int = outHeight
 
                 // Determine how much to scale down the image
-                var scaleFactor: Int= 1
+                var scaleFactor = 1
                 if(photoH>0 && photoW>0) {
                     scaleFactor = max(1, min(photoW / targetW, photoH / targetH))
                 }
@@ -389,7 +385,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }catch (e: Exception){
-            Log.e(TAG,"Error in get captured image...the current photo path is..."+currentPhotoPath,e)
+            Log.e(TAG,
+                "Error in get captured image...the current photo path is...$currentPhotoPath",e)
             throw e
         }
     }
@@ -505,10 +502,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val tagSize = Rect(0, 0, 0, 0)
 
             // calculate the right font size
-            var lengthOfText = 0;
-            if(it.text != null) {
-                lengthOfText = it.text.length;
-            }
+           // var lengthOfText = 0
+//            if(it.text != null) {
+//               val lengthOfText = it.text.length
+//            }
             yPen.getTextBounds(it.text, 0, it.text.length, tagSize)
             val fontSize: Float = yPen.textSize * box.width() / tagSize.width()
 
