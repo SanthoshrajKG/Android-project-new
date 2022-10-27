@@ -176,7 +176,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             when (condition) {
                 "T" -> {
                     resultValue =
-                        roundOffDecimal(resultValue.toDouble()).toString()  //resultValue.toDouble()
+                        //roundOffDecimal(resultValue.toDouble()).toString()  //resultValue.toDouble()
+                        resultValue
 
                        tarWeightList.add(resultValue)
                 }
